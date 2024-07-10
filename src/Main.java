@@ -13,8 +13,7 @@ public class Main {
         for(int i=0; i<s.length(); i++)
         {
             char ch  = s.charAt(i);
-            int asciiVal = (int) ch;
-            String binaryString = Integer.toBinaryString(asciiVal);
+            String binaryString = Integer.toBinaryString(ch);
             String formattedBinary = String.format("%7s", binaryString).replace(' ', '0');
             System.out.printf("%c : %s \n",ch, formattedBinary);
         }
