@@ -5,6 +5,7 @@ public class Main {
     {
         Scanner sc = new Scanner(System.in);
         String s;
+        StringBuilder formattedBinary = new StringBuilder();
 
         System.out.println("Input String : ");
         s = sc.nextLine();
@@ -12,11 +13,10 @@ public class Main {
         System.out.println("\nThe result : ");
         for(int i=0; i<s.length(); i++)
         {
-            char ch  = s.charAt(i);
-            String binaryString = Integer.toBinaryString(ch);
-            String formattedBinary = String.format("%7s", binaryString).replace(' ', '0');
-            System.out.printf("%c : %s \n",ch, formattedBinary);
+            formattedBinary.append(CharToBinary.charToBinary(s.charAt(i)));
         }
-        System.out.println();
+        System.out.println(formattedBinary);
+        StringBuilder encodedRes = ChuckNorrisUnaryCode.encoder(formattedBinary.toString());
+        System.out.println(encodedRes);
     }
 }
