@@ -43,23 +43,23 @@ public class ChuckNorrisUnaryCode
 
         for (int i=0; i< parts.length; i+=2)
         {
+            //If parts are not complete
+            if(i + 1 >= parts.length)
+            {
+                throw new IllegalArgumentException("Invalid encoded string format");
+            }
+
             String prefix = parts[i];
             String zeros = parts[i + 1];
 
             switch(prefix)
             {
                 case "00":
-                    for (int j=0; j<zeros.length(); j++)
-                    {
-                        binary.append('0');
-                    }
+                    binary.append("0".repeat(zeros.length()));
                 break;
 
                 case "0":
-                    for (int j=0; j<zeros.length(); j++)
-                    {
-                        binary.append('1');
-                    }
+                    binary.append("1".repeat(zeros.length()));
                 break;
             }
 
